@@ -1,1 +1,3 @@
-/Users/vanshthakral/Desktop/git/OOPS LAB JAVA/Java-Practice/Experiment-6/Logger.java
+// This will cause a compilation error
+// class ExtendedLogger extends Logger {
+// }
