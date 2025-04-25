@@ -1,0 +1,3 @@
+Java is a popular Programming language
+It is widely used for building web applications, mobile apps , and enterprise software
+This file contains multiple lines of text to test the word computing functionality 

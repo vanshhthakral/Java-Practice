@@ -1,0 +1,43 @@
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class ContactListManager {
+    public static void main(String[] args) {
+        // Step 1: Create a LinkedList with initial sorted contact names
+        LinkedList<String> contacts = new LinkedList<>();
+        contacts.add("Alice");
+        contacts.add("Charlie");
+        contacts.add("David");
+        contacts.add("Emma");
+
+        // New contact to add
+        String newContact = "Brian";
+
+        // Step 2: Create a ListIterator
+        ListIterator<String> iterator = contacts.listIterator();
+
+        // Step 3: Find correct position to insert the new contact
+        boolean inserted = false;
+        while (iterator.hasNext()) {
+            String current = iterator.next();
+            if (newContact.compareToIgnoreCase(current) < 0) {
+                // Move iterator back one step to insert before current
+                iterator.previous();
+                iterator.add(newContact);
+                inserted = true;
+                break;
+            }
+        }
+
+        // Step 4: If newContact is alphabetically after all elements
+        if (!inserted) {
+            iterator.add(newContact);
+        }
+
+        // Step 5: Display updated contact list
+        System.out.println("Updated contact list:");
+        for (String contact : contacts) {
+            System.out.println(contact);
+        }
+    }
+}
